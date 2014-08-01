@@ -1,0 +1,32 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.parent {
+    overflow: hidden;
+    border: 1px solid red
+}
+.left {
+	float:left;
+    overflow: left;
+    height: auto;
+    background: #ccc
+    display:inline-block;
+}
+.right {
+    float: left;
+    width: auto;
+    height: auto;
+    background: #dcdcdc;
+    font-size:1.2em;
+    display:inline-block;
+}
+.h2t{
+	font-size:1.2em;
+	text-align: center;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%=ep.name%></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    
+    <h1><%= ep.name%>@ <%=ep.now %></h1>
+   <ul>
+	<%  for(var i=0; i<ep.dls.length; i++) {%>
+	   <li>	
+      <%= ep.dls[i].type %> <%= ep.dls[i].name %>- 
+      <a href='<%= ep.dls[i].link1 %>'>迅雷</a>
+      &nbsp;<a href='<%= ep.dls[i].link2 %>'>磁力</a>
+      &nbsp;<a href='<%= ep.dls[i].link3 %>'>电驴</a> 
+
+     </li>
+	<% } %>
+</ul>
+  </body>
+</html>

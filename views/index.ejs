@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>美剧更新提示</title>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    
+    <h1>Update Check on <a href='<%= ep.rooturl%>'><%= ep.rooturl%></a> @ <%=ep.now %></h1>
+   
+  <div class="parent">
+  <div class="left">
+   <ul>
+	<%  var names=["行尸走肉","摩登家庭","神盾局特工","打工姐妹花","破产姐妹","生活大爆炸","绿箭","犯罪心理","无耻家庭","无耻家庭\(美版\)","无耻家庭(美版)","特效化妆师大对决","权力的游戏","前夫总动员","硅谷","厨艺大师","电脑狂人","舞魅天下","满足","天桥风云"]
+		for(var i=0; i<ep.dls.length; i++) {%>
+	   <li><%if(names.indexOf(ep.dls[i].name)>-1){%><span style="font-size:2em;font-weight:bold"><%= ep.dls[i].name%></span>
+	   <%}else{%>
+	   	<%= ep.dls[i].name %>
+	   	<%}%> - <a href='/list?link=<%= ep.dls[i].link1 %>'>下载页</a> </li>
+	<% } %>
+</ul>
+  </div>
+  <div class="right">
+    <h2 class="h2t">常用链接</h2>
+    <ul class="list-group">
+    <li class="list-group-item"><a href="list?link=/resource/11010" >摩登家庭</a></li>
+    <li class="list-group-item"><a href="list?link=/resource/11057" >行尸走肉</a></li>
+    <li class="list-group-item"><a href="list?link=/resource/30675" >神盾局特工</a></li>
+    <li class="list-group-item"><a href="list?link=/resource/11103" >破产姐妹</a></li>
+    <li class="list-group-item"><a href="list?link=/resource/11005" >生活大爆炸</a></li>
+    <li class="list-group-item"><a href="list?link=/resource/26779" >绿箭</a></li>
+    <li class="list-group-item"><a href="list?link=/resource/11003" >犯罪心理</a></li>
+    <li class="list-group-item"><a href="list?link=/resource/10733" >权力的游戏</a></li>
+    <li class="list-group-item"><a href="list?link=/resource/10760" >无耻家庭</a></li>
+    <li class="list-group-item"><a href="list?link=/resource/11157" >特效化妆师大对决</a></li>
+    <li class="list-group-item"><a href="list?link=/resource/11120" >前夫总动员</a></li>    
+    <li class="list-group-item"><a href="list?link=/resource/10868" >厨艺大师</a></li>
+    <li class="list-group-item"><a href="list?link=/resource/31973" >电脑狂人</a></li>
+    <li class="list-group-item"><a href="list?link=/resource/31801" >硅谷</a></li>
+    </ul>
+  </div>
+  </body>
+</html>
