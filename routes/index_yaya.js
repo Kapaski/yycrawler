@@ -5,7 +5,7 @@
 
 var myUtil = require('./myUtil.js');
 var $ = require('jQuery');
-var m = require('moment')
+var m = require('moment-timezone')
 
 
 exports.index_yaya = function(req, res){
@@ -27,7 +27,7 @@ var url="http://www.yayaxz.com/";
 			//console.log(curDl.link1)
 			ep.dls.push(curDl)
 		})
-		ep.now =m().format('lll')
+		ep.now =m().tz('Australia/Melbourne').format('lll')
 		res.render('index',{ep:ep});
 	});
 };
