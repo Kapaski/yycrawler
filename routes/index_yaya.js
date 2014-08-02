@@ -24,7 +24,7 @@ var url="http://www.yayaxz.com/";
 			//var dd=$(this).parent().parent().siblings()
 			//curDl.link1=dd.find('a[class="bnt-0 resource-download-name"]:contains("迅雷")').attr('thunderhref')
 			curDl.link1=$(this).attr('href')
-			console.log(curDl.link1)
+			//console.log(curDl.link1)
 			ep.dls.push(curDl)
 		})
 		ep.now =m().format('lll')

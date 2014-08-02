@@ -4,7 +4,7 @@ var u = require('url')
 var mo = require('moment')
 
 exports.list = function(req, res){
-	var url_parts = u.parse(req.url,true);	
+	var url_parts = u.parse(req.url,true);
 	var qs = url_parts.query.link;
 	var url="http://www.yayaxz.com"+qs;
 	console.log(url);
@@ -15,11 +15,11 @@ exports.list = function(req, res){
 		//extract episode name and download links
 		ep.name=$(content).find("title").text()
 
-		//calculate current season number 
+		//calculate current season number
 		ep.dls=[]
-		$(content).find('dd[data-format="MP4"]').each(function(){ 
+		$(content).find('dd[data-format="MP4"]').each(function(){
 			var x=$(this).attr('data-season');
-			max=max<x?x:max 
+			max=max<x?x:max
 		})
 		var m = max.toString()
 		$(content).find('dd[data-format="MP4"][data-season="'+m+'"]').each(function() {
@@ -36,7 +36,7 @@ exports.list = function(req, res){
 			var detail = {}
 			detail.type=$(this).find('a.type').text()
 			detail.name=$(this).find('a').eq(1).text()
-			detail.link1=$(this).find('span a').eq(2).attr('thunderhref')||$(this).find('span a').eq(2).attr('href')||$(this).find('span a').eq(2).attr('qhref')
+			detail.link1=$(this).find('span a[data-download-type="-1"]').eq(0).attr('thunderhref')
 			detail.link2=$(this).find('span a').eq(1).attr('href')
 			detail.link3=$(this).find('span a').eq(0).attr('href')
 
@@ -46,7 +46,7 @@ exports.list = function(req, res){
 			var detail = {}
 			detail.type=$(this).find('a.type').text()
 			detail.name=$(this).find('a').eq(1).text()
-			detail.link1=$(this).find('span a').eq(2).attr('thunderhref')||$(this).find('span a').eq(2).attr('href')||$(this).find('span a').eq(2).attr('qhref')
+			detail.link1=$(this).find('span a[data-download-type="-1"]').eq(0).attr('thunderhref')
 			detail.link2=$(this).find('span a').eq(1).attr('href')
 			detail.link3=$(this).find('span a').eq(0).attr('href')
 
@@ -56,7 +56,7 @@ exports.list = function(req, res){
 			var detail = {}
 			detail.type=$(this).find('a.type').text()
 			detail.name=$(this).find('a').eq(1).text()
-			detail.link1=$(this).find('span a').eq(2).attr('thunderhref')||$(this).find('span a').eq(2).attr('href')||$(this).find('span a').eq(2).attr('qhref')
+			detail.link1=$(this).find('span a[data-download-type="-1"]')[0].getAttribute('thunderhref')
 			detail.link2=$(this).find('span a').eq(1).attr('href')
 			detail.link3=$(this).find('span a').eq(0).attr('href')
 
