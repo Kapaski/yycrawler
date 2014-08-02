@@ -32,8 +32,38 @@ exports.list = function(req, res){
 
 			ep.dls.push(detail)
 		})
+		$(content).find('dd[data-format="DVD"][data-season="0"]').each(function() {
+			var detail = {}
+			detail.type=$(this).find('a.type').text()
+			detail.name=$(this).find('a').eq(1).text()
+			detail.link1=$(this).find('span a').eq(2).attr('thunderhref')||$(this).find('span a').eq(2).attr('href')||$(this).find('span a').eq(2).attr('qhref')
+			detail.link2=$(this).find('span a').eq(1).attr('href')
+			detail.link3=$(this).find('span a').eq(0).attr('href')
+
+			ep.dls.push(detail)
+		})
+		$(content).find('dd[data-format="720P"][data-season="0"]').each(function() {
+			var detail = {}
+			detail.type=$(this).find('a.type').text()
+			detail.name=$(this).find('a').eq(1).text()
+			detail.link1=$(this).find('span a').eq(2).attr('thunderhref')||$(this).find('span a').eq(2).attr('href')||$(this).find('span a').eq(2).attr('qhref')
+			detail.link2=$(this).find('span a').eq(1).attr('href')
+			detail.link3=$(this).find('span a').eq(0).attr('href')
+
+			ep.dls.push(detail)
+		})
+		$(content).find('dd[data-format="1080P"][data-season="0"]').each(function() {
+			var detail = {}
+			detail.type=$(this).find('a.type').text()
+			detail.name=$(this).find('a').eq(1).text()
+			detail.link1=$(this).find('span a').eq(2).attr('thunderhref')||$(this).find('span a').eq(2).attr('href')||$(this).find('span a').eq(2).attr('qhref')
+			detail.link2=$(this).find('span a').eq(1).attr('href')
+			detail.link3=$(this).find('span a').eq(0).attr('href')
+
+			ep.dls.push(detail)
+		})
 		ep.now=mo().format('lll')
-		console.log(ep)
+		//console.log(ep)
  		res.render('list',{ep:ep});
 	});
 };

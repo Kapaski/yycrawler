@@ -7,13 +7,15 @@
   <body>
     
     <h1><%= ep.name%>@ <%=ep.now %></h1>
+    <span>copy links to Thunder to download</span>
    <ul>
+
 	<%  for(var i=0; i<ep.dls.length; i++) {%>
 	   <li>	
       <%= ep.dls[i].type %> <%= ep.dls[i].name %>- 
-      <a href='<%= ep.dls[i].link1 %>'>迅雷</a>
-      &nbsp;<a href='<%= ep.dls[i].link2 %>'>磁力</a>
-      &nbsp;<a href='<%= ep.dls[i].link3 %>'>电驴</a> 
+      <a href='<%= ep.dls[i].link1 %>'>link1</a>
+      &nbsp;<a href='<%= ep.dls[i].link2 %>'>link2</a>
+      &nbsp;<a href='<%= ep.dls[i].link3 %>'>link3</a> 
 
      </li>
 	<% } %>
