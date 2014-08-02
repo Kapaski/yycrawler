@@ -19,7 +19,7 @@ exports.list = function(req, res){
 		ep.dls=[]
 		$(content).find('dd[data-format="MP4"]').each(function(){
 			var x=$(this).attr('data-season');
-			max=max<x?x:max
+			max=Number(max)<Number(x)?x:max
 		})
 		var m = max.toString()
 		$(content).find('dd[data-format="MP4"][data-season="'+m+'"]').each(function() {
