@@ -1,7 +1,7 @@
 var myUtil = require('./myUtil.js');
 var $ = require('jQuery');
 var u = require('url')
-var mo = require('moment')
+var mo = require('moment-timezone')
 
 exports.list = function(req, res){
 	var url_parts = u.parse(req.url,true);
@@ -62,7 +62,7 @@ exports.list = function(req, res){
 
 			ep.dls.push(detail)
 		})
-		ep.now=mo().format('lll')
+		ep.now=mo().tz('Australia/Melbourne').format('lll')
 		//console.log(ep)
  		res.render('list',{ep:ep});
 	});
